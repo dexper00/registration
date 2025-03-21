@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNOSIS 4.0 - Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Overlay Content -->
+    <div class="overlay"></div>
+    <div class="content">
+        <h1 class="title">GNOSIS 4.0</h1>
+        <p class="description">The Ultimate Tech Events - Register Now!</p>
+        
+        <!-- Payment & Registration Button -->
+        <button id="payButton">Register Now - ₹30</button>
+    </div>
+
+    <script>
+        document.getElementById("payButton").addEventListener("click", function() {
+            let upiURL = "upi://pay?pa=nabeelalikkal5-1@okhdfcbank&pn=NabeelAlikkal&am=30&cu=INR";
+            window.location.href = upiURL;
+
+            // Redirect to Google Form after payment
+            setTimeout(() => {
+                window.location.href = "https://forms.gle/your-google-form-link";
+            }, 25000); // Redirect after 25 seconds
+        });
+    </script>
+
+</body>
+</html>
